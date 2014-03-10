@@ -12,14 +12,20 @@ void setup() {
   Serial.begin(9600);
 }
 
-void myFunction() {
-	Serial.println("Hello!");
+void myFunctionA() {
+	Serial.println("Hello A!");
 }
 
-IntervalTimer timer(1000, myFunction);
+void myFunctionB() {
+	Serial.println("Hello B!");
+}
+
+IntervalTimer timerA(1000, myFunctionA);
+IntervalTimer timerB(3000, myFunctionB);
 
 void loop() {
-	timer.update();
+	timerA.update();
+	timerB.update();
 }
 ```
 
